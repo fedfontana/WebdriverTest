@@ -13,7 +13,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverLifeCycleSetting {
 
-	protected WebDriver driver; 
+	protected WebDriver driver;
 
 	@BeforeAll
 	public static void beforeAll() {
@@ -22,10 +22,10 @@ public class DriverLifeCycleSetting {
 
 	@BeforeEach
 	public void beforeEach() {
-//		ChromeOptions options = new ChromeOptions();
-//		options.addArguments("--headless");
-//		driver = new ChromeDriver(options);
-		driver = new ChromeDriver();
+ 		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+		driver = new ChromeDriver(options);
+	 // 	driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 
